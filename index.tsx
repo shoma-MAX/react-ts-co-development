@@ -8,6 +8,7 @@ interface AppProps {}
 interface AppState {
   name: string;
   evangelion: string;
+  age: number;
 }
 
 class App extends Component<AppProps, AppState> {
@@ -15,16 +16,18 @@ class App extends Component<AppProps, AppState> {
     super(props);
     this.state = {
       name: "React",
-      evangelion: "evangelion"
+      evangelion: "evangelion",
+      age:21
     };
   }
 
   render() {
     return (
       <div>
-        <Hello name={this.state.name} />
+        <Hello name={this.state.name} age={this.state.age} />
         <p>Start editing to see some magic happen :)</p>
         <GoodBy evangelion={this.state.evangelion} />
+        <Hello name={this.state.evangelion} age={this.state.age}/>
       </div>
     );
   }
